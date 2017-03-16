@@ -21,3 +21,9 @@ puts "#{Entry.find_each(start: 2, batch_size: 2) { |entry| puts "Name: #{entry.n
 
 puts "Test find_in_batches: "
 puts "#{Entry.find_in_batches(start: 1, batch_size: 2) { |entries| entries.each { |entry| puts "Name: #{entry.name}" } } }"
+
+puts "Test order: "
+puts "#{Entry.order(name: :asc, phone_number: :desc)}"
+
+puts "Test where: "
+puts "#{Entry.where(address_book_id: 1)}"
