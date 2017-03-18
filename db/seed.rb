@@ -27,3 +27,25 @@ puts "#{Entry.order(name: :asc, phone_number: :desc)}"
 
 puts "Test where: "
 puts "#{Entry.where(address_book_id: 1)}"
+
+puts "Test update: "
+people = { 1 => {"name" => "Norris"}, 2 => {"name" => "Irang"} }
+Entry.update(people.keys, people.values)
+puts "#{Entry.all}"
+
+puts "Test method missing: "
+entry = Entry.find_one(3)
+entry.update_name("Amadeus")
+puts "#{Entry.all}"
+
+puts "Test where/take chain: "
+entry = Entry.where("name": "Amadeus").take(1)
+puts "#{entry}"
+
+puts "Test where/where chain: "
+entry = Entry.where("name": "Amadeus").where(email: "foo_three@gmail.com")
+puts "#{entry}"
+
+puts "Test where.not chain: "
+entries = Entry.where.not("name" => "Amadeus")
+puts "#{entries.inspect}"
