@@ -151,7 +151,7 @@ class MenuController
   end
 
   def delete_entry(entry)
-    address_book.entries.delete(entry)
+    Entry.where(name: entry.name, address_book_id: address_book.id).first.destroy
     puts "#{entry.name} has been deleted"
   end
 
