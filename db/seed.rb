@@ -50,26 +50,26 @@ puts "Test where.not chain: "
 entries = Entry.where.not("name" => "Amadeus")
 puts "#{entries.inspect}"
 
-puts "Test #destroy_all with string input: "
-puts "List of all entries: "
-puts "#{Entry.all}"
-puts "Destroying Amadeus..."
-Entry.destroy_all("name = 'Amadeus'")
-puts "List of all entries: "
-puts "#{Entry.all}"
+# puts "Test #destroy_all with string input: "
+# puts "List of all entries: "
+# puts "#{Entry.all}"
+# puts "Destroying Amadeus..."
+# Entry.destroy_all("name = 'Amadeus'")
+# puts "List of all entries: "
+# puts "#{Entry.all}"
 
-puts "Test #destroy_all on an array: "
-puts "List of all entries: "
-puts "#{Entry.all}"
-puts "Entry.where(name: Norris).destroy_all..."
-Entry.where(name: 'Norris').destroy_all
-puts "Now the list of all entries is:"
-puts "#{Entry.all}"
+# puts "Test #destroy_all on an array: "
+# puts "List of all entries: "
+# puts "#{Entry.all}"
+# puts "Entry.where(name: Norris).destroy_all..."
+# Entry.where(name: 'Norris').destroy_all
+# puts "Now the list of all entries is:"
+# puts "#{Entry.all}"
 
-puts "Test #destroy_all with array conditions: "
-puts "List of all entries: "
-puts "#{Entry.all}"
-puts "Entry.destroy_all('phone_number = ?', '111-111-1111')"
-Entry.destroy_all("phone_number = ?", '111-111-1111')
-puts "Now the list of all entries is:"
-puts "#{Entry.all}"
+# puts "Test #destroy_all with array conditions: "
+# puts "List of all entries: "
+# puts "#{Entry.all}"
+# puts "Entry.destroy_all('phone_number = ?', '111-111-1111')"
+# Entry.destroy_all("phone_number = ?", '111-111-1111')
+# puts "Now the list of all entries is:"
+# puts "#{Entry.all}"
